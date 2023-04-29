@@ -1,0 +1,36 @@
+ use p190068_5B
+switched to db p190068_5B
+> db.createUser(
+... {
+... user: "usman2",
+... pwd: "usman123",
+... roles: [ { role: "readWrite", db: "p190068_5B" }]
+... }
+... )
+Successfully added user: {
+        "user" : "usman2",
+        "roles" : [
+                {
+                        "role" : "readWrite",
+                        "db" : "p190068_5B"
+                }
+        ]
+}
+
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongo --port 27017 --authenticationDatabase "p190068_5B" -u "usman2" -p
+MongoDB shell version v5.0.5
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/?authSource=p190068_5B&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("565f297c-678e-466a-97ca-129856fd2efe") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+> show dbs
+p190068_5B  0.011GB
+> show tables

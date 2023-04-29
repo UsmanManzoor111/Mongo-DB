@@ -1,0 +1,119 @@
+use p190068_UsmanManzoor
+switched to db p190068_UsmanManzoor
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+nutec   0.000GB
+
+> db.users.insert([{"username" : "abc123", "password" : "def321", "email" : "abc123@gmail.com", "Address" : "Peshawar", "Contact" : "+923367464123"}]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.users.insert([{"username" : "xyz789", "password" : "vbn123", "email" : "xyz789@gmail.com", "Address" : "Karachi"}]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+
+> db.users.insert([{"username" : "Zain", "password" : "abc123", "email" : "zain@gmail.com", "DOB" : "1997-02-13", "Address" : "Islamabad"}]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.users.insert([{"username" : "Atif", "password" : "qwe123", "email" : "Atif@gmail.com", "Address" : "Islamabad"}]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("61adafa74a233c2765211e8b"),
+        "username" : "abc123",
+        "password" : "def321",
+        "email" : "abc123@gmail.com",
+        "DOB" : ""
+}
+{
+        "_id" : ObjectId("61adb0604a233c2765211e8c"),
+        "username" : "abc123",
+        "password" : "def321",
+        "email" : "abc123@gmail.com",
+        "Address" : "Peshawar",
+        "Contact" : "+923367464123"
+}
+{
+        "_id" : ObjectId("61adb0a24a233c2765211e8d"),
+        "username" : "xyz789",
+        "password" : "vbn123",
+        "email" : "xyz789@gmail.com",
+        "Address" : "Karachi"
+}
+{
+        "_id" : ObjectId("61adb0b14a233c2765211e8e"),
+        "username" : "xyz789",
+        "password" : "vbn123",
+        "email" : "xyz789@gmail.com",
+        "Address" : "Karachi"
+}
+{
+        "_id" : ObjectId("61adb11c4a233c2765211e8f"),
+        "username" : "Zain",
+        "password" : "abc123",
+        "email" : "zain@gmail.com",
+        "DOB" : "1997-02-13",
+        "Address" : "Islamabad"
+}
+{
+        "_id" : ObjectId("61adb1434a233c2765211e90"),
+        "username" : "Atif",
+        "password" : "qwe123",
+        "email" : "Atif@gmail.com",
+        "Address" : "Islamabad"
+}
+
+> db.users.find({"Address" : "Islamabad"}).pretty()
+{
+        "_id" : ObjectId("61adb11c4a233c2765211e8f"),
+        "username" : "Zain",
+        "password" : "abc123",
+        "email" : "zain@gmail.com",
+        "DOB" : "1997-02-13",
+        "Address" : "Islamabad"
+}
+{
+        "_id" : ObjectId("61adb1434a233c2765211e90"),
+        "username" : "Atif",
+        "password" : "qwe123",
+        "email" : "Atif@gmail.com",
+        "Address" : "Islamabad"
+}
